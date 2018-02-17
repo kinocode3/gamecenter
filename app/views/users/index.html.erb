@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+  <div><h1 class="text-center p-title"></span> 生徒作品一覧</h1></div>
+  
+
+
+<div class='row row-height'>
+    <% @users.each do |user| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="panel panel-primary">
+          <div class="panel-body text-center">
+            <h4> ユーザー名：<%= user.name %></h4>
+            <%= link_to '表示する', user_path(id: user.id), target: "_brank", class: "btn btn-default", role: "button"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+<!--<%= link_to '新しいユーザーを追加する', new_user_path %>-->

@@ -1,0 +1,26 @@
+<div id="notice"><%= notice %></div>
+
+<div class="col-xs-12 text-center p-title">
+  <h1>作品名:<%= @complete.name %></h1><strong>カリキュラム:<%= @complete.curriculum_name %></strong>
+  <h2>開発者名:<%= @user.name %></h2>
+</div>
+
+<div class="col-xs-12">
+  
+</div>
+
+<div class="col-xs-12 text-center">
+  <%= @complete.contents.html_safe %>
+</div>
+
+<div class="col-xs-12 text-center">
+  <strong>説明:<%= @complete.description %></strong>
+</div>
+
+<div class="col-xs-12 text-center">
+  <!--<%# if @current_user == "administrator" %>-->
+    <%= link_to '編集', edit_complete_path(@complete) %>
+  <!--<%# end %>-->
+
+  <%= link_to '一覧に戻る', completes_path, class: "btn btn-default", role: "button" %>
+</div>

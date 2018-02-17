@@ -1,0 +1,30 @@
+<%= form_for(@user, html: { role: "form"}) do |f| %>
+  <% if @user.errors.any? %>
+  <h3>入力した内容にエラーが<%= @user.errors.count %>件あります</h3>
+  <ul>
+    <% for message in @user.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :名前 %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ニックネーム %><br>
+    <%= f.text_field :nickname %>
+  </div>
+  <div class="field">
+    <%= f.label :パスワード %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :再確認パスワード %><br>
+    <%= f.text_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit '登録', class: "btn btn-default", role: "button"%>
+  </div>
+<% end %>

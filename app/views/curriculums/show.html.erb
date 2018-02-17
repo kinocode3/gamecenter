@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-xs-12 text-center p-title">
+  <h1>カリキュラム名:<%= @curriculum.name %></h1>
+  <strong>説明:<%= @curriculum.description %></strong>
+</div>
+
+    <% @completes.each do |complete| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="panel panel-primary">
+          <div class="panel-body text-center">
+            <h4> 作品名：<%= complete.name %></h4>
+            <p><%= image_tag complete.img_path %></p>
+            <p><%= complete.description %></p>
+            <%= link_to '表示する', complete, target: "_brank", class: "btn btn-default", role: "button"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+
+
+<div class="col-xs-12 text-center">
+  <% if @current_user == "administrator" %>
+    <%= link_to '編集', edit_curriculum_path(@curriculum) %>
+  <% end %>
+
+  <%= link_to '一覧に戻る', curriculums_path, class: "btn btn-default", role: "button" %>
+</div>

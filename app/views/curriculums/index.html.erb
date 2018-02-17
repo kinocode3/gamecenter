@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+  <div><h1 class="text-center p-title"></span> カリキュラム一覧</h1></div>
+  
+<div class='row row-height'>
+    <% @curriculums.each do |curriculum| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="panel panel-primary">
+          <div class="panel-body text-center">
+            <h4> カリキュラム名：<%= curriculum.name %></h4>
+            <p><%= curriculum.description %></p>
+            <%= link_to '表示する', curriculum_path(id: curriculum.id), target: "_brank", class: "btn btn-default", role: "button"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+<!--<%= link_to '新しい作品を追加する', new_curriculum_path %>-->

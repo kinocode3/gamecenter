@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> ゲームセンター（キノコード生徒作品集）</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+  <header class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu">
+          <span class="sr-only">メニュー</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'ゲームセンター（キノコード生徒作品集）', completes_path, class: "navbar-brand" %>
+      </div>
+      <div class="collapse navbar-collapse" id="site-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to completes_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 作品一覧<% end %></li>
+          <li><%= link_to curriculums_path do %><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> カリキュラム別<% end %></li>
+          <li><%= link_to users_path do %><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 生徒別<% end %></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+      <%= yield %>
+  </div>
+</body>
+</html>

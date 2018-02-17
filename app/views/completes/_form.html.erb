@@ -1,0 +1,38 @@
+<%= form_for(@complete, html: { role: "form"}) do |f| %>
+  <% if @complete.errors.any? %>
+  <h3>入力した内容にエラーが<%= @complete.errors.count %>件あります</h3>
+  <ul>
+    <% for message in @complete.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <div class="field">
+    <%= f.label :タイトル %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ユーザー名 %><br>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :カリキュラム名 %><br>
+    <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :画像 %><br>
+    <%= f.file_field :img_path %>
+  </div>
+  <div class="field">
+    <%= f.label :コンテンツ %><br>
+    <%= f.text_field :contents %>
+  </div>
+  <div class="field">
+    <%= f.label :説明など %><br>
+    <%= f.text_area :description, cols: 40, rows: 20, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit '登録', class: "btn btn-default", role: "button"%>
+  </div>
+<% end %>
