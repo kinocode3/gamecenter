@@ -8,7 +8,7 @@ set :deploy_to, '/game/kinocode/'
 
 set :keep_releases, 5
 
-set :rbenv_type, :system # :system or :user
+set :rbenv_type, :user # :system or :user
 set :rbenv_ruby, '2.3.4'#rubyのバージョン
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

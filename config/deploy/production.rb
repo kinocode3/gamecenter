@@ -13,13 +13,17 @@ role :app, %w{000@153.126.202.140}
 role :web, %w{000@153.126.202.140}
 role :db,  %w{000@153.126.202.140}
 
-server '153.126.202.140', user: '000', roles: %w{web app db}
-
-set :ssh_options, {
-    forward_agent: true,
-    auth_methods: %w(publickey),
-    port: 22
+server '153.126.202.140', user: '000', roles: %w{web app db}, ssh_options: {
+    password: "000"
 }
+
+
+# set :ssh_options, {
+#     forward_agent: true,
+#     auth_methods: %w(publickey),
+#     port: 22,
+#     password: "000"
+# }
 
 # role-based syntax
 # ==================
